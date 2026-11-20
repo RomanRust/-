@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcfaf7">
+  <meta name="description" content="Подбор жилья для долгосрочной аренды в Москве, Санкт-Петербурге, Казани и Екатеринбурге.">
+  <title>Свой адрес — аренда жилья в городах России</title>
+  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./catalog.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#search">К поиску жилья</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top"><img src="./assets/mark.svg" width="36" height="36" alt="">Свой адрес</a>
+      <nav aria-label="Основное меню">
+        <a href="#catalog">Каталог</a>
+        <a href="#cities">Города</a>
+        <a href="#guide">Советы</a>
+      </nav>
+      <button class="button button-outline header-favorite" id="favorites-button" type="button" aria-label="Избранное"><span data-icon="heart"></span><span>Избранное</span><span id="favorites-count" class="favorite-count" hidden></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero-shell" aria-labelledby="hero-title">
+      <div class="hero">
+        <img class="hero-photo" src="./assets/hero.jpg" alt="" fetchpriority="high" width="1400" height="933">
+        <div class="hero-content">
+          <p class="eyebrow">Долгосрочная аренда</p>
+          <h1 id="hero-title">Найдите свой<br>новый дом</h1>
+          <p class="hero-description">Выбирайте жильё в городах России по цене, комнатности и условиям аренды.</p>
+        </div>
+        <form class="search" id="search" aria-label="Поиск жилья">
+          <label class="search-field">
+            <span class="field-icon" data-icon="map-pin"></span>
+            <span class="field-main"><span class="field-label">Город</span>
+              <select name="city" id="city-select">
+                <option value="">Все города</option>
+              </select>
+            </span>
+            <span class="field-chevron" data-icon="chevron-down"></span>
+          </label>
+          <label class="search-field">
+            <span class="field-icon" data-icon="building"></span>
+            <span class="field-main"><span class="field-label">Комнатность</span>
+              <select name="rooms">
+                <option value="">Любая</option>
+                <option value="0">Студия</option>
+                <option value="1">1 комната</option>
+                <option value="2">2 комнаты</option>
+                <option value="3">3 и более</option>
+              </select>
+            </span>
+            <span class="field-chevron" data-icon="chevron-down"></span>
+          </label>
+          <label class="search-field">
+            <span class="field-icon" data-icon="wallet"></span>
+            <span class="field-main"><span class="field-label">Бюджет в месяц</span>
+              <select name="budget">
+                <option value="">Любая цена</option>
+                <option value="35000">До 35 000 ₽</option>
+                <option value="50000">До 50 000 ₽</option>
+                <option value="70000">До 70 000 ₽</option>
+                <option value="100000">До 100 000 ₽</option>
+              </select>
+            </span>
+            <span class="field-chevron" data-icon="chevron-down"></span>
+          </label>
+          <button class="button button-primary search-button" type="submit"><span data-icon="search"></span>Найти жильё</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shell city-section" id="cities" aria-labelledby="city-title">
+      <div class="section-heading">
+        <div><h2 id="city-title">Выберите город</h2><p>Где хотите снять жильё?</p></div>
+        <button class="button button-outline all-cities" id="all-cities" type="button"><span data-icon="layout-grid"></span>Все варианты</button>
+      </div>
+      <div class="city-grid" id="city-grid"></div>
+    </section>
+
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="section-heading catalog-heading">
+          <div><h2 id="catalog-title" tabindex="-1">Жильё в аренду</h2><p>Тестовые объявления для знакомства с каталогом.</p></div>
+          <label class="sort"><span data-icon="arrows-sort"></span><span class="visually-hidden">Сортировка</span>
+            <select name="sort" id="catalog-sort">
+              <option value="featured">Рекомендуемые</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="size-desc">Сначала просторнее</option>
+            </select><span data-icon="chevron-down"></span>
+          </label>
+        </div>
+        <div class="catalog-controls">
+          <div class="quick-filters" aria-label="Дополнительные фильтры">
+            <label class="toggle"><input type="checkbox" id="no-fee"><span><span data-icon="check"></span>Без комиссии</span></label>
+            <label class="toggle"><input type="checkbox" id="pets"><span><span data-icon="paw"></span>Можно с питомцами</span></label>
+            <button class="text-button" id="reset-filters" type="button" hidden>Сбросить</button>
+          </div>
+          <p class="result-count" id="result-count" role="status"></p>
+        </div>
+        <div class="listing-grid" id="listings"></div>
+        <div class="external-search" id="external-search"></div>
+        <noscript><p>Для работы поиска и избранного включите JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="shell guide-section" id="guide" aria-labelledby="guide-title">
+      <div class="section-heading"><div><p class="eyebrow">Памятка арендатора</p><h2 id="guide-title">Перед тем как снять жильё</h2></div></div>
+      <div class="guide-grid">
+        <article><span class="guide-icon" data-icon="receipt"></span><h3>Посчитайте расходы</h3><p>Кроме аренды за первый месяц, уточните размер залога, комиссии и коммунальных платежей.</p></article>
+        <article><span class="guide-icon" data-icon="door"></span><h3>Договоритесь о просмотре</h3><p>Проверьте состояние квартиры и техники. Если важна тишина, прислушайтесь к звукам с улицы при открытых окнах.</p></article>
+        <article><span class="guide-icon" data-icon="file-text"></span><h3>Проверьте документы</h3><p>Попросите подтверждение права сдавать жильё. Перед оплатой зафиксируйте условия аренды в договоре.</p></article>
+      </div>
+      <a class="guide-source" href="https://t-j.ru/short/gde-snyat-kvartiru/" target="_blank" rel="noopener">Где искать квартиру — подборка Т—Ж <span data-icon="external-link"></span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="#top"><img src="./assets/mark.svg" width="36" height="36" alt="">Свой адрес</a>
+      <p>Демонстрационный каталог аренды</p>
+      <button class="text-button" id="credits-button" type="button">Источники фотографий</button>
+    </div>
+  </footer>
+
+  <dialog id="popup" class="popup" aria-labelledby="popup-title">
+    <div class="popup-header">
+      <h2 id="popup-title"></h2>
+      <button class="icon-button" id="popup-close" type="button" aria-label="Закрыть" autofocus><span data-icon="x"></span></button>
+    </div>
+    <div id="popup-content" class="popup-content"></div>
+  </dialog>
+</body>
+</html>
+
