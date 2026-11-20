@@ -1,0 +1,8 @@
+{
+  "name": "next-exam-prep",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal vanilla HTML/CSS/JS landing page for SAT and IELTS preparation.",
+  "scripts": { "start": "node launch.js", "serve": "node server.js", "check": "node --check script.js && node --check server.js && node --check launch.js" },
+  "engines": { "node": ">=18" }
+}

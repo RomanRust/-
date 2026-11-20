@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9f6">
+  <meta name="description" content="Next — подготовка к SAT и IELTS за 5 месяцев. Начните с бесплатной диагностики и персонального плана: теория, практика и пробные экзамены.">
+  <title>next — SAT, IELTS и ваши большие планы</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/golos-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/golos-700.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <!-- Inline icons use Tabler's 24 × 24 stroke paths (MIT license). -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 3H20v19H6.5A2.5 2.5 0 0 1 4 19.5v-14A2.5 2.5 0 0 1 6.5 3ZM8 7h8M8 11h6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M8 9h8M8 13h6M3 20l1.3-3.9A9 9 0 1 1 7.9 19L3 20"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#" aria-label="Next — на главную">next<span class="brand-square" aria-hidden="true"></span></a>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#programs">Программы</a>
+        <a href="#approach">Как учимся</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="button button-small button-ink header-cta" href="#apply">Начать бесплатно</a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+        <svg class="icon menu-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon menu-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="orange-text">NEXT STEP</span><span class="eyebrow-line" aria-hidden="true"></span>ПОДГОТОВКА К ПОСТУПЛЕНИЮ</p>
+          <h1 id="hero-title">Сильный балл.<br><span>Большие планы.</span></h1>
+          <p class="hero-description">SAT и IELTS за 5 месяцев системной подготовки. Превратим вашу цель в понятный план на каждую неделю.</p>
+          <div class="hero-actions">
+            <a class="button button-orange" href="#apply">Получить свой план</a>
+            <a class="text-link" href="#programs">Выбрать программу</a>
+          </div>
+          <p class="hero-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Диагностика и первый план — бесплатно</p>
+          <div class="hero-facts" aria-label="О курсе">
+            <div><strong>5 месяцев</strong><span>от старта до экзамена</span></div>
+            <div><strong>Онлайн</strong><span>из любой точки мира</span></div>
+            <div><strong>С вами</strong><span>преподаватель и план</span></div>
+          </div>
+        </div>
+
+        <div class="route-wrap">
+          <span class="card-caption">ЦЕЛЬ БОЛЬШАЯ. ШАГИ ПОНЯТНЫЕ.</span>
+          <section class="route-card" aria-label="Пример персонального маршрута">
+            <div class="route-card-top"><span class="route-name">Ваш маршрут</span><span class="route-duration">5 месяцев</span></div>
+            <div class="exam-tabs" role="tablist" aria-label="Выберите экзамен для примера плана">
+              <button id="tab-sat" class="exam-tab" type="button" role="tab" aria-selected="true" aria-controls="route-panel" tabindex="0" data-exam="sat">SAT</button>
+              <button id="tab-ielts" class="exam-tab" type="button" role="tab" aria-selected="false" aria-controls="route-panel" tabindex="-1" data-exam="ielts">IELTS</button>
+            </div>
+            <div id="route-panel" class="route-panel" role="tabpanel" aria-labelledby="tab-sat" tabindex="0">
+              <p class="target-caption">Например, ваша цель</p>
+              <div class="target-score"><span id="target-value">1400</span><span class="target-plus">+</span></div>
+              <p class="target-description" id="target-description">баллов SAT. Начнём с вашего уровня.</p>
+              <div class="route-skills" id="route-skills"><span>Reading &amp; Writing</span><span>Math</span></div>
+              <ol class="route-steps">
+                <li><span class="step-marker" aria-hidden="true"></span><div><span class="step-period">МЕСЯЦ 1</span><strong>Находим точку старта</strong><p id="route-step-one">Диагностика, база и стратегия</p></div></li>
+                <li><span class="step-marker" aria-hidden="true"></span><div><span class="step-period">МЕСЯЦЫ 2–4</span><strong>Развиваем навыки</strong><p id="route-step-two">Задания, тайминг и пробные тесты</p></div></li>
+                <li><span class="step-marker final-marker" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><div><span class="step-period">МЕСЯЦ 5</span><strong>Собираем всё вместе</strong><p id="route-step-three">Повторение и полная репетиция</p></div></li>
+              </ol>
+            </div>
+            <a class="route-card-link" id="route-cta" href="#apply" data-select-program="sat">Составить мой маршрут</a>
+          </section>
+          <p class="route-disclaimer">Цель определим после диагностики. План адаптируем под вас.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs section" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">ПРОГРАММЫ</p><h2 id="programs-title">Два экзамена.<br>Один следующий шаг.</h2></div>
+          <p>Выберите своё направление.<br>На диагностике разберёмся с остальным.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card sat-card">
+            <div class="program-top"><span class="program-category">ДЛЯ ПОСТУПЛЕНИЯ НА БАКАЛАВРИАТ</span><span class="program-length">5 месяцев</span></div>
+            <h3>SAT<span class="program-title-mark" aria-hidden="true">/</span></h3>
+            <p class="program-description">Математика и английский, которые работают на вашу цель.</p>
+            <ul class="feature-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Reading &amp; Writing: тексты, логика, грамматика</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Math: от ключевых тем к сложным задачам</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Пробные тесты и стратегия работы со временем</li>
+            </ul>
+            <div class="program-bottom"><span>От базы до полного пробника</span><a class="button button-ink" href="#apply" data-select-program="sat">Выбрать SAT</a></div>
+          </article>
+          <article class="program-card ielts-card">
+            <div class="program-top"><span class="program-category">АНГЛИЙСКИЙ ДЛЯ УЧЁБЫ ЗА РУБЕЖОМ</span><span class="program-length">5 месяцев</span></div>
+            <h3>IELTS<span class="program-title-mark" aria-hidden="true">/</span></h3>
+            <p class="program-description">Уверенно говорить, понимать и показывать свой английский.</p>
+            <ul class="feature-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Listening и Reading: стратегии и практика</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Writing: структура эссе и обратная связь</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Speaking: разговорная практика с разбором</li>
+            </ul>
+            <div class="program-bottom"><span>Готовимся к IELTS Academic</span><a class="button button-ink" href="#apply" data-select-program="ielts">Выбрать IELTS</a></div>
+          </article>
+        </div>
+        <p class="combined-note">Нужны оба экзамена? <a class="inline-link" href="#apply" data-select-program="both">Составим общий план подготовки.</a></p>
+      </div>
+    </section>
+
+    <section class="approach section" id="approach" aria-labelledby="approach-title">
+      <div class="container approach-layout">
+        <div class="approach-intro"><p class="eyebrow">КАК МЫ УЧИМСЯ</p><h2 id="approach-title">Меньше хаоса.<br>Больше системы.</h2><p>Вы всегда знаете, что делать сегодня и как это приближает к экзамену.</p><a class="text-link" href="#apply">Начать с диагностики</a></div>
+        <div class="approach-items">
+          <article><div class="approach-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></div><div><h3>План под вашу точку старта</h3><p>Сначала определяем уровень и цель. Затем выбираем темы, нагрузку и темп, с которым получится двигаться регулярно.</p></div></article>
+          <article><div class="approach-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></div><div><h3>Практика после каждой темы</h3><p>Разбираем принцип, решаем задания и возвращаемся к ошибкам. Новые знания сразу превращаются в навык.</p></div></article>
+          <article><div class="approach-icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></div><div><h3>Обратная связь по делу</h3><p>Преподаватель объясняет, где теряются баллы. Пробные тесты помогают увидеть прогресс и скорректировать маршрут.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="apply-section section" id="apply" aria-labelledby="apply-title">
+      <div class="container apply-layout">
+        <div class="apply-copy"><p class="eyebrow">ВАШ ПЕРВЫЙ ШАГ</p><h2 id="apply-title">Большой путь.<br><span>Простой старт.</span></h2><p>Начните с бесплатной диагностики.<br>Разберём ваш уровень, цель и сроки — и соберём персональный план подготовки.</p><ul class="apply-benefits"><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Определим сильные стороны и пробелы</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Подберём подходящую программу</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Обсудим комфортный темп занятий</li></ul><span class="free-label">Диагностика + план <strong>Бесплатно</strong></span></div>
+        <div class="application-card">
+          <div id="form-content">
+            <h3>Давайте познакомимся</h3>
+            <p class="form-intro">Оставьте контакт для обсуждения подготовки.</p>
+            <form id="application-form" action="/api/applications" method="post" novalidate>
+              <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="given-name" placeholder="Ваше имя" minlength="2" maxlength="80" required aria-describedby="name-error"><span class="field-error" id="name-error"></span></div>
+              <div class="field"><label for="contact">Email или Telegram</label><input id="contact" name="contact" type="text" autocomplete="off" placeholder="you@example.com или @username" maxlength="150" required aria-describedby="contact-error"><span class="field-error" id="contact-error"></span></div>
+              <div class="field"><label for="program">К чему готовимся</label><div class="select-wrap"><select id="program" name="program" required aria-describedby="program-error"><option value="" selected disabled>Выберите направление</option value="sat">SAT</option><option value="ielts">IELTS Academic</option><option value="both">SAT + IELTS</option><option value="unsure">Нужна помощь с выбором</option></select><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></div><span class="field-error" id="program-error"></span></div>
+              <div class="honeypot" aria-hidden="true"><label for="company">Компания</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+              <div class="consent-field"><label class="consent"><input id="consent" type="checkbox" name="consent" required aria-describedby="consent-error"><span>Можно связаться со мной по поводу подготовки.</span></label><span class="field-error" id="consent-error"></span></div>
+              <button class="button button-orange form-submit" type="submit">Получить бесплатный план</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+              <p class="form-footnote">Только о подготовке и вашем следующем шаге.</p>
+              <noscript><p class="field-error">Для работы формы включите JavaScript.</p></noscript>
+            </form>
+          </div>
+          <div id="form-success" class="form-success" hidden tabindex="-1">
+            <div class="success-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
+            <p class="eyebrow">ПЕРВЫЙ ШАГ СДЕЛАН</p><h3>Заявка сохранена.</h3><p id="success-copy"></p><p class="application-reference" id="application-reference"></p><button class="button button-ink" id="another-application" type="button">Оставить ещё одну заявку</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div><p class="eyebrow">ЕЩЁ ПАРА ДЕТАЛЕЙ</p><h2 id="faq-title">Хорошие<br> вопросы.</h2><p class="faq-intro">Всё, что хочется знать до старта.</p></div>
+        <div class="faq-items">
+          <details><summary>С каким уровнем можно начать?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Начнём с диагностики. Она покажет, какие темы уже даются легко, а где нужно укрепить базу. Если до экзамена потребуется больше времени, учтём это в персональном плане.</p></details>
+          <details><summary>Как проходят занятия?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Онлайн с преподавателем. Каждую тему закрепляем практикой, задания разбираем вместе, а прогресс проверяем на пробных тестах. Расписание и нагрузку обсуждаем до начала курса.</p></details>
+          <details><summary>Можно готовиться к SAT и IELTS вместе?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Да. Составим единый маршрут с учётом уровня английского, математики и дат экзаменов. Распределим нагрузку и выделим приоритеты для каждого направления.</p></details>
+          <details><summary>Что входит в бесплатный первый шаг?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Диагностика стартового уровня, обсуждение цели и рекомендации по подготовке. Вы получите понятный план: с чего начать, на каких темах сосредоточиться и как распределить время.</p></details>
+          <details><summary>Как узнать стоимость курса?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Стоимость зависит от направления и формата занятий. Обсудим её вместе с персональным планом до начала курса. Диагностика и составление первого плана бесплатны.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="wordmark" href="#" aria-label="Next — наверх">next<span class="brand-square" aria-hidden="true"></span></a><p>Большие планы начинаются с next.</p><span>© <span id="year">2026</span> next</span></div></footer>
+</body>
+</html>
